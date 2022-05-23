@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block style %}
+    .board_all_contents{
+        width : 500px;
+        height : 800px;
+        display : flex;
+        justify-content : start;
+    }
+    .board_title{
+        height : 40px;
+        width : 300px;
+        padding-top : 10px;
+        padding-left : 10px;
+        justify-content : space-between;
+        border-left : 2px solid rgb(0,255,153);
+        border-bottom : 2px solid rgb(0,255,153);
+    }
+    .form-control{
+        font-size : 20px;
+    }
+    .board_contents{
+        display : flex;
+        margin-top : 30px;
+        width : 500px;
+        border-left : 2px solid rgb(0,255,153);
+        border-bottom : 2px solid rgb(0,255,153);
+    }
+    input{
+        decoration : none;
+    }
+    #back{
+        margin-left : 30px;
+        margin-top : 30px;
+        width : 200px;
+        height : 30px;
+        border : none;
+    }
+    #back:hover{
+        background-color : rgb(0,255,153);
+    }
+{% endblock style %}
+{% block contents %}
+<div class="board_all_contents">
+    <div class="form-group">
+        <div class="board_title">
+            <!--<label for="title">제목</label>-->
+            <input 
+            type="text" 
+            class="form-control"
+            id="title"
+            value="{{ board.title }}"
+            readonly
+            style="border:0 solid black"
+            >
+        </div>
+        <div class="board_contents">
+            <!--<label for="contents">내용</label>-->
+            <textarea class="detail_content" cols="60" rows="20s" style="border: none;">
+                {{ board.contents }}
+            </textarea>  
+        </div>
+        <button id="back" class="btn btn-primary" onclick="location.href='/board/list/'">돌아가기</button>
+    </div>
+</div>
+    
+{% endblock contents %}

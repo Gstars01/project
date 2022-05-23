@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/bootstrap.min.css" />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    /> -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+      integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+      integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+      crossorigin="anonymous"
+    ></script>
+    {% block title %}
+    {% endblock title %}
+    <style>
+        {% block style %}
+        {% endblock style %}
+        a{
+            color: inherit;
+            text-decoration: none;
+        }
+        a:hover{
+            color:rgb(0,255,153);
+        }
+        .header{
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #dadada;
+            border-bottom: 1px solid #dadada;
+            margin:10px;
+            padding-left : 50px;
+            padding-right: 50px;
+        }
+        ul{
+            list-style: none;
+            padding-left: 0;
+        }
+        ul > li{
+            
+            display: inline-block;
+            color: #5a5a5a;
+            font-size: 14px;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .title{
+            font-size: 40px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            
+        }
+        .logo{
+            color:rgb(000,255,102);
+            border-bottom: 1px solid #dadada;
+        }
+        .sns{
+            width: 100%;
+            color: white;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .sns > div{
+            margin:5px;
+            background-color: #aaa;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .insta:hover{
+            background-color: plum;
+        }
+        .kakao:hover{
+            background-color: rgb(212, 212, 16);
+        }
+        .Face:hover{
+            background-color: rgb(67, 67, 247);
+        }
+        .nav{
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            border-bottom: 1px solid#dadada;
+        }
+        .nav > ul>li{
+            margin-left: 30px;
+            font-size: 20px;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+        .bottom{
+            display: flex;
+            justify-content: center;
+        }
+        .bottom > ul >li{
+            padding: 5px;
+            border-right: 3px solid #5a5a5a;
+            margin-right: 5px;
+            font-size: 13px;
+        }
+        .copyright{
+            text-align: center;
+            font-size : 12px;
+            font-family: tahoma,sans-serif;
+            color : #333;
+        }
+        .tel{
+            text-align: center;
+            font-size: 9px;
+            color : #dadada;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <ul>
+                <li>|<a href="/user/login/">LOGIN</a></li>
+                <li>|<a href="/user/register/">JOIN_US</a></li>
+                <li>|<a href="">MY_PAGE</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <ul>
+                <li><a href="">공지사항</a></li>
+                <li><a href="">출석체크</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="logo">
+        <div class="title"><a href="home">DOGE</a></div>
+        <div class="sns">
+            <div class="Face">f</div>
+                <div class="insta"><a href="https://www.instagram.com/gae_valja/">i</a></div>
+            <div class="kakao"><a href="https://open.kakao.com/o/si0u1hB">K</a></div>
+        </div>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="/board/list/">게시판</a></li>
+            <li><a href="">시세</a></li>
+            <li><a href="">정보</a></li>
+            <li><a href="">토론장</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        {% block contents %}
+        {% endblock contents %}
+    </div>
+    <hr>
+    <div class="bottom">
+        <ul>
+            <li> 회사소개  </li>
+            <li> 인재채용 </li>
+            <li> 재휴안내 </li>
+            <li> 광고안내 </li>
+            <li> 이용약관 </li>
+            <li id="user_info_uesing"> 개인정보처리방침 </li>
+            <li> 청소년보호정책 </li>
+        </ul>
+    </div>
+    <div class="copyright">
+        Copyright ⓒ 2021-2021 DOGE. All rights reserved.
+    </div>
+    <div class="tel">
+        ℡ : 010-4311-1371_______email : khw4986@gmail.com
+    </div>
+</body>
+</html>
